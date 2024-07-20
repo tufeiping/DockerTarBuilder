@@ -21,8 +21,12 @@
 
 点击“Run workflow” 按钮启动工作流。
 
+<img src="./action-snapshot.png" />
+
 ### 下载镜像
 构建过程可以通过看标题前面图标状态来确定状态(如果是正在构建，会有 `working` 示意)，如果完成了，可以通过点击构建流程名进入明细页面(任务都是倒序排序的，所以是第一个)，然后可以看到 `Artifacts` 部分，点击 `docker-images-tar` 文档后面的下载按钮即可进行下载。
+
+<img src="./download-snapshot.png" />
 
 > Github提供的构建容器环境是时效的，不会长期保存，所以构建完毕后，尽快下载到本地
 
