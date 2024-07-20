@@ -39,5 +39,5 @@ docker load docker-img.tar
 ```
 
 ## 🔗 相关项目
-[https://github.com/wukongdaily/OrangePiShell](https://github.com/SuperManito/LinuxMirrors)
-https://github.com/monlor/docker-xiaoya
+- [https://github.com/wukongdaily/OrangePiShell](https://github.com/SuperManito/LinuxMirrors)
+- [https://github.com/monlor/docker-xiaoya](https://github.com/monlor/docker-xiaoya)
