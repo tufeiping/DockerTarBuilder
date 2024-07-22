@@ -23,12 +23,26 @@
 
 <img src="./action-snapshot.png" />
 
+构建过程可以通过看标题前面图标状态来确定状态(如果是正在构建，会有 `working` 示意)
+<img src="./loading.png"/>
+
 ### 下载镜像
-构建过程可以通过看标题前面图标状态来确定状态(如果是正在构建，会有 `working` 示意)，如果完成了，可以通过点击构建流程名进入明细页面(任务都是倒序排序的，所以是第一个)，然后可以看到 `Artifacts` 部分，点击 `docker-images-tar` 文档后面的下载按钮即可进行下载。
+
+构建完成后，可以通过点击构建流程名进入明细页面(任务都是倒序排序的，所以是第一个)，然后可以看到 `Artifacts` 部分，点击 `docker-images-tar` 文档后面的下载按钮即可进行下载。
 
 <img src="./download-snapshot.png" />
 
-> Github提供的构建容器环境是时效的，不会长期保存，所以构建完毕后，尽快下载到本地
+> Github提供的构建容器环境是时效的（默认90天），本项目设置为1天，不长期保存，所以构建完毕后在1天内下载到本地即可
+
+配置见 `arm64.yml/amd64.yml`
+```yaml
+- name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: docker-images-tar
+        path: x86-64-images.tar.gz
+        retention-days: 1  # 将保留天数设置为 1 天 最多可设置90天
+```
 
 ## 🗜️ 解压工具
 因为镜像`tar`包一般都比较大，为了网络传输效率，对 `tar` 包进行了进一步压缩。 对于下载的镜像文件（一般都比较大，即使压缩后），在不同的平台使用对应的解压工具先进行解压缩操作。
